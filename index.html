@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>David Leonardo | SRE & DevOps</title>
     <style>
-        /* Variáveis de Cores - Tema Dark TI */
         :root {
             --bg-color: #0d1117;
             --bg-card: #161b22;
@@ -16,88 +15,68 @@
             --border-color: #30363d;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.7;
-            font-size: 1.1rem; /* Fonte base aumentada */
+            font-size: 1.1rem;
         }
 
-        /* Tipografia de Código para dar visual de TI */
-        h1, h2, h3, .mono {
-            font-family: "Courier New", Courier, monospace;
-        }
+        h1, h2, h3, .mono { font-family: "Courier New", Courier, monospace; }
 
-        a {
-            color: var(--accent-blue);
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+        a { color: var(--accent-blue); text-decoration: none; }
+        a:hover { text-decoration: underline; }
 
-        .container {
-            max-width: 1000px; /* Reduzido levemente de 1200 para a leitura ficar confortável em 1 coluna */
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
 
+        /* --- HEADER --- */
         header {
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 20px;
             margin-bottom: 40px;
         }
 
-        header h1 {
-            color: var(--accent-blue);
-            font-size: 2.8rem;
-        }
-
-        header h1::before {
-            content: "david@sre:~$ ";
-            color: var(--accent-green);
-            font-size: 2.2rem;
-        }
-
-        header p {
-            font-size: 1.3rem;
-            color: var(--text-muted);
-            margin-top: 10px;
-        }
+        header h1 { color: var(--accent-blue); font-size: 2.8rem; }
+        header h1::before { content: "david@sre:~$ "; color: var(--accent-green); font-size: 2.2rem; }
+        header p { font-size: 1.3rem; color: var(--text-muted); margin-top: 10px; }
 
         .contact-links {
             margin-top: 20px;
             display: flex;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
             align-items: center;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
+
+        /* --- BOTÕES --- */
+        .btn {
+            padding: 9px 18px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-family: "Courier New", Courier, monospace;
+            transition: opacity 0.2s;
+            display: inline-block;
+        }
+        .btn:hover { opacity: 0.8; text-decoration: none; }
 
         .btn-download {
             background-color: var(--accent-green);
             color: var(--bg-color) !important;
-            padding: 10px 18px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: opacity 0.3s;
             border: 1px solid var(--accent-green);
         }
-        .btn-download:hover {
-            opacity: 0.8;
-            text-decoration: none;
+
+        .btn-projects {
+            background-color: transparent;
+            color: var(--accent-blue) !important;
+            border: 1px solid var(--accent-blue);
         }
 
-        section {
-            margin-bottom: 60px;
-        }
+        /* --- SECTIONS --- */
+        section { margin-bottom: 60px; }
 
         h2 {
             color: var(--accent-green);
@@ -106,17 +85,10 @@
             margin-bottom: 25px;
             font-size: 2rem;
         }
+        h2::before { content: "./"; color: var(--text-muted); }
 
-        h2::before {
-            content: "./";
-            color: var(--text-muted);
-        }
-        
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
+        /* --- SKILLS --- */
+        .skills-container { display: flex; flex-wrap: wrap; gap: 12px; }
 
         .skill-tag {
             background-color: var(--bg-card);
@@ -127,6 +99,7 @@
             font-weight: bold;
         }
 
+        /* --- CARDS --- */
         .card {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -135,11 +108,7 @@
             margin-bottom: 25px;
         }
 
-        .card h3 {
-            color: var(--accent-blue);
-            margin-bottom: 8px;
-            font-size: 1.4rem;
-        }
+        .card h3 { color: var(--accent-blue); margin-bottom: 8px; font-size: 1.4rem; }
 
         .card .date {
             font-size: 1rem;
@@ -149,33 +118,29 @@
             font-family: "Courier New", Courier, monospace;
         }
 
-        .card p {
-            margin-bottom: 15px;
+        .card p { margin-bottom: 15px; }
+
+        ul { padding-left: 25px; }
+        li { margin-bottom: 12px; }
+
+        .highlight { color: var(--accent-green); font-weight: bold; }
+
+        /* --- CTA PROJETOS --- */
+        .projects-cta {
+            background-color: var(--bg-card);
+            border: 1px dashed var(--accent-blue);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
         }
 
-        ul {
-            padding-left: 25px;
+        .projects-cta p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 1.15rem;
         }
 
-        li {
-            margin-bottom: 12px;
-        }
-
-        .highlight {
-            color: var(--accent-green);
-            font-weight: bold;
-        }
-
-        .project-link {
-            display: inline-block;
-            margin-top: 15px;
-            font-weight: bold;
-            font-family: "Courier New", Courier, monospace;
-        }
-        .project-link::before {
-            content: "🔗 ";
-        }
-
+        /* --- FOOTER --- */
         footer {
             text-align: center;
             border-top: 1px solid var(--border-color);
@@ -192,15 +157,14 @@
     <!-- CABEÇALHO -->
     <header>
         <h1>David_Leonardo_Cerqueira</h1>
-        <p class="mono">> Analista e Administrador de Servidores | DevOps | SRE</p>
-        
+        <p class="mono">&gt; Analista e Administrador de Servidores | DevOps | SRE</p>
+
         <div class="contact-links mono">
-            <a href="mailto:davidleocerqueira@gmail.com">📧 Email</a>
-            <a href="https://www.linkedin.com/in/david-leonardo-b25670250/" target="_blank">🔗 LinkedIn</a>
-            <a href="https://github.com/Davidleoc" target="_blank">💻 GitHub</a>
-            <span>📍 São Paulo/SP</span>
-            
-            <a href="curriculo.pdf" download class="btn-download">📄 Download_CV.pdf</a>
+            <a href="mailto:davidleocerqueira@gmail.com">&#128231; Email</a>
+            <a href="https://www.linkedin.com/in/david-leonardo-b25670250/" target="_blank">&#128279; LinkedIn</a>
+            <a href="https://github.com/Davidleoc" target="_blank">&#128187; GitHub</a>
+            <span>&#128205; São Paulo/SP</span>
+            <a href="curriculo.pdf" download class="btn btn-download">&#128196; Download_CV.pdf</a>
         </div>
     </header>
 
@@ -208,14 +172,14 @@
     <section>
         <h2>about_me.txt</h2>
         <p>
-            Administrador de Servidores Linux (<strong>DevOps | SRE</strong>) apaixonado por automação e infraestrutura escalável. 
+            Administrador de Servidores Linux (<strong>DevOps | SRE</strong>) apaixonado por automação e infraestrutura escalável.
             Tenho vasta experiência em manter ambientes críticos rodando em Linux (CentOS/Ubuntu), garantindo alta disponibilidade, performance e segurança.
         </p>
         <br>
         <p>
-            Atuo ativamente na orquestração de containers com <span class="highlight">Docker e Kubernetes (Argo CD)</span>, 
-            e na automação rigorosa de processos utilizando <span class="highlight">Ansible e Rundeck</span>. 
-            Meu objetivo principal é desenvolver soluções internas, automações de monitoramento e práticas de <em>Infrastructure as Code</em> (IaC) que 
+            Atuo ativamente na orquestração de containers com <span class="highlight">Docker e Kubernetes (Argo CD)</span>,
+            e na automação rigorosa de processos utilizando <span class="highlight">Ansible e Rundeck</span>.
+            Meu objetivo principal é desenvolver soluções internas, automações de monitoramento e práticas de <em>Infrastructure as Code</em> (IaC) que
             tragam resiliência para a infraestrutura e agilidade real para o dia a dia da equipe, sempre focando em métricas e observabilidade.
         </p>
     </section>
@@ -236,47 +200,17 @@
         </div>
     </section>
 
-    <!-- PROJETOS DE DESTAQUE -->
-    <section>
-        <h2>projects.yml</h2>
-        
-        <div class="card">
-            <h3>Gerenciador de IPs e Ativos de Rede (IPAM)</h3>
-            <span class="date">DevOps & Infraestrutura Interna</span>
-            <p>
-                Sistema interno desenvolvido para realizar a gestão centralizada de endereços IP, redes e nomes de ativos da infraestrutura.
-            </p>
-            <ul>
-                <li><strong>Objetivo:</strong> Facilitar a administração da infraestrutura e documentar alocações de rede de forma eficiente.</li>
-                <li><strong>Impacto:</strong> Redução de conflitos de IP em ambientes escaláveis e melhoria na organização e auditoria dos ativos de rede.</li>
-            </ul>
-            <a href="https://github.com/Davidleoc/gerenciador_IPs" target="_blank" class="project-link">Acessar Repositório (gerenciador_IPs)</a>
-        </div>
-
-        <div class="card">
-            <h3>LLM Customizado e Vetorização de Dados</h3>
-            <span class="date">Automação & IA</span>
-            <p>
-                Criação de um Large Language Model (LLM) opensource do zero, estruturando todo o processo de vetorização de dados empresariais.
-            </p>
-            <ul>
-                <li><strong>Tecnologias:</strong> Python e PostgreSQL (Vector).</li>
-                <li><strong>Objetivo:</strong> Permitir buscas semânticas rápidas e integradas à base de conhecimento da equipe.</li>
-            </ul>
-        </div>
-    </section>
-
     <!-- EXPERIÊNCIA -->
     <section>
         <h2>history_experiencias.log</h2>
-        
+
         <div class="card">
             <h3>Administrador de Servidores e Bancos de Dados (DevOps / Infraestrutura)</h3>
-            <span class="date">Legião da Boa Vontade (LBV) | 03/2025 – Atual</span>
+            <span class="date">Legião da Boa Vontade (LBV) | 03/2025 &#8211; Atual</span>
             <ul>
                 <li>Administração, monitoramento e manutenção de servidores Linux, garantindo estabilidade, segurança e aplicação de Hardening (SRE).</li>
                 <li>Atuação DevOps com deploy de aplicações via <strong>Docker/Docker-compose</strong> e gestão de clusters <strong>Kubernetes</strong> utilizando ArgoCD.</li>
-                <li>Implementação de automação massiva com <strong>Ansible e Rundeck</strong> para atualização de pacotes. A solução possui lógica de autorrecuperação, substituindo rotinas manuais demoradas e reduzindo drasticamente o tempo de manutenção e o erro humano.</li>
+                <li>Implementação de automação massiva com <strong>Ansible e Rundeck</strong> para atualização de pacotes, com lógica de autorrecuperação &#8212; substituindo rotinas manuais que levavam meses, reduzindo drasticamente o tempo de manutenção e eliminando o erro humano.</li>
                 <li>Forte atuação em Observabilidade: criação de scripts em <strong>Bash e Python</strong> para integração do monitoramento (Nagios XI) com o Jira, e criação de dashboards no Nagvis.</li>
                 <li>Criação de cluster MongoDB com replica set e exposição de métricas de PostgreSQL via Prometheus, com monitoramento no Grafana.</li>
                 <li>Renovação de certificados SSL e configuração de proxy reverso (Apache/Nginx) com autenticação via Active Directory (AD).</li>
@@ -287,24 +221,38 @@
     <!-- FORMAÇÃO -->
     <section>
         <h2>education.json</h2>
+
         <div class="card">
             <h3>Análise e Desenvolvimento de Sistemas (Graduação)</h3>
-            <span class="date">Unip - Marquês | Concluído em 2024</span>
-        </div>
-        <div class="card">
-            <h3>Conquistas & Certificações</h3>
+            <span class="date">Universidade Paulista (UNIP) | fev/2023 &#8211; dez/2024</span>
             <ul>
-                <li>Monitoria em Java (Programação Orientada a Objetos) - 2024</li>
-                <li>Medalha de Prata na Olimpíada Brasileira de Raciocínio Lógico (OBRL) - 2022</li>
-                <li>Cursos complementares em Linux, Docker, Python e Modelagem de Dados.</li>
+                <li>Desenvolvimento de projetos usando <strong>SQL Server, MySQL, C#, C++, Java</strong>.</li>
+                <li>Indicado pelo professor Paulo Custódio para atuar como <strong>Monitor</strong> na disciplina de Tópicos Especiais de Programação Orientada a Objetos (2º semestre de 2024), auxiliando outros alunos com lógica de programação, Java e Dart.</li>
             </ul>
+        </div>
+
+        <div class="card">
+            <h3>Conquistas &amp; Certificações</h3>
+            <ul>
+                <li><strong>Medalha de Prata</strong> na Olimpíada Brasileira de Raciocínio Lógico (OBRL) &#8212; nível Delta &#8212; nov/2022</li>
+                <li><strong>Certificado TOEFL Junior Standard Test</strong> &#8212; out/2019</li>
+                <li>Cursos complementares: Linux (Alura), Modelagem de Dados (Alura), Java (Udemy / Universidade XTI), C# (Cursa), HTML/CSS/JS (Fundação Bradesco), Power BI e Excel (Cursa), Inglês Básico (Univesp).</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CTA PROJETOS -->
+    <section>
+        <h2>projects.yml</h2>
+        <div class="projects-cta">
+            <p>Confira os projetos de automação, infraestrutura e ferramentas internas que desenvolvi ao longo da minha trajetória.</p>
+            <a href="projects.html" class="btn btn-projects">&#128193; Ver Projetos</a>
         </div>
     </section>
 
     <!-- RODAPÉ -->
     <footer>
-        <p>>_ System shutdown... [OK]</p>
-        <p>>_ Execution finished successfully. Status: 200 OK</p>
+        <p>&gt;_ Execution finished successfully. Status: 200 OK</p>
     </footer>
 </div>
 

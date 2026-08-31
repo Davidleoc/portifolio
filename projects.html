@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos | David Leonardo</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --bg-card: #161b22;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent-green: #3fb950;
+            --accent-blue: #58a6ff;
+            --accent-yellow: #d29922;
+            --border-color: #30363d;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        h1, h2, h3, .mono { font-family: "Courier New", Courier, monospace; }
+
+        a { color: var(--accent-blue); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+
+        /* --- HEADER --- */
+        header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header div h1 { color: var(--accent-blue); font-size: 2rem; }
+        header div h1::before { content: "~/projects$ "; color: var(--accent-green); font-size: 1.6rem; }
+        header div p { color: var(--text-muted); font-size: 1.1rem; margin-top: 8px; }
+
+        .btn {
+            padding: 9px 18px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-family: "Courier New", Courier, monospace;
+            transition: opacity 0.2s;
+            display: inline-block;
+            font-size: 1rem;
+        }
+        .btn:hover { opacity: 0.8; text-decoration: none; }
+
+        .btn-back {
+            background-color: transparent;
+            color: var(--accent-blue) !important;
+            border: 1px solid var(--accent-blue);
+        }
+
+        .btn-repo {
+            background-color: transparent;
+            color: var(--accent-green) !important;
+            border: 1px solid var(--accent-green);
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
+
+        /* --- PROJECTS GRID --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        /* --- PROJECT CARD --- */
+        .project-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            transition: border-color 0.2s;
+        }
+        .project-card:hover { border-color: var(--accent-blue); }
+
+        .project-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .project-card h2 {
+            color: var(--accent-blue);
+            font-size: 1.6rem;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+        /* Override do ::before global para os h2 dentro de cards */
+        .project-card h2::before { content: ""; }
+
+        .project-card .category {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9rem;
+            color: var(--bg-color);
+            background-color: var(--accent-yellow);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .project-card .date {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            display: block;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        .project-card p { margin-bottom: 15px; }
+
+        ul { padding-left: 25px; }
+        li { margin-bottom: 10px; }
+
+        .highlight { color: var(--accent-green); font-weight: bold; }
+
+        /* Tags de tecnologia dentro de cada card */
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+
+        .tech-tag {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* CARD vazio / placeholder */
+        .project-card.placeholder {
+            border-style: dashed;
+            opacity: 0.6;
+            text-align: center;
+        }
+        .project-card.placeholder h2 { color: var(--text-muted); font-size: 1.3rem; }
+        .project-card.placeholder p { color: var(--text-muted); }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            margin-top: 60px;
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- CABEÇALHO DA PÁGINA DE PROJETOS -->
+    <header>
+        <div>
+            <h1>ls -la projects/</h1>
+            <p class="mono">Projetos de infraestrutura, automação e ferramentas internas</p>
+        </div>
+        <a href="index.html" class="btn btn-back">&#8592; Voltar ao Portfólio</a>
+    </header>
+
+    <!-- GRADE DE PROJETOS -->
+    <div class="projects-grid">
+
+        <!-- PROJETO 1: Gerenciador de IPs -->
+        <div class="project-card">
+            <div class="project-card-header">
+                <h2>Gerenciador de IPs e Ativos de Rede (IPAM)</h2>
+                <span class="category">Infraestrutura / Redes</span>
+            </div>
+            <span class="date">DevOps &amp; Infraestrutura Interna &#8212; LBV</span>
+            <p>
+                Sistema web interno desenvolvido para centralizar e automatizar a gestão de endereços IP, sub-redes e nomes de ativos
+                da infraestrutura. Surgiu da necessidade real de organizar e auditar a alocação de IPs em um ambiente com múltiplos
+                servidores e serviços.
+            </p>
+            <ul>
+                <li><strong>Problema:</strong> Controle de IPs feito manualmente em planilhas, sujeito a conflitos e erros humanos.</li>
+                <li><strong>Solução:</strong> Ferramenta web com interface para consulta, cadastro e edição de endereços IP e ativos de rede.</li>
+                <li><strong>Impacto:</strong> Redução de conflitos de IP, melhoria na auditoria e rastreabilidade dos ativos de rede em ambiente de produção.</li>
+            </ul>
+            <div class="tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Banco de Dados</span>
+                <span class="tech-tag">Redes</span>
+                <span class="tech-tag">Infraestrutura</span>
+            </div>
+            <a href="https://github.com/Davidleoc/gerenciador_IPs" target="_blank" class="btn btn-repo">&#128193; Ver Repositório no GitHub</a>
+        </div>
+
+        <!-- PROJETO 2: LLM Interno -->
+        <div class="project-card">
+            <div class="project-card-header">
+                <h2>LLM Customizado e Vetorização de Dados</h2>
+                <span class="category">Automação / IA</span>
+            </div>
+            <span class="date">Infraestrutura de IA Interna &#8212; LBV</span>
+            <p>
+                Criação de um Large Language Model (LLM) opensource do zero, com todo o processo de vetorização e indexação de
+                dados empresariais internos, permitindo buscas semânticas na base de conhecimento da equipe.
+            </p>
+            <ul>
+                <li><strong>Problema:</strong> Dificuldade em consultar e recuperar informações internas dispersas em documentos e bases de dados.</li>
+                <li><strong>Solução:</strong> Pipeline de vetorização de dados com modelo LLM integrado ao banco de dados para buscas por similaridade semântica.</li>
+                <li><strong>Impacto:</strong> Acelerou a consulta de informações técnicas pela equipe, sem depender de ferramentas pagas externas.</li>
+            </ul>
+            <div class="tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">PostgreSQL (pgvector)</span>
+                <span class="tech-tag">LLM / IA</span>
+                <span class="tech-tag">Vetorização</span>
+            </div>
+        </div>
+
+        <!-- PROJETO 3: Automação Ansible -->
+        <div class="project-card">
+            <div class="project-card-header">
+                <h2>Automação de Atualização Massiva com Ansible</h2>
+                <span class="category">DevOps / Automação</span>
+            </div>
+            <span class="date">Infraestrutura Linux &#8212; LBV</span>
+            <p>
+                Implementação de um playbook Ansible para atualização segura e massiva de pacotes em servidores Linux (CentOS/Ubuntu),
+                com lógica de autorrecuperação de serviços.
+            </p>
+            <ul>
+                <li><strong>Problema:</strong> Atualização de servidores era um processo manual, demorado, feito de forma fracionada fora do horário de expediente.</li>
+                <li><strong>Solução:</strong> Playbook Ansible que identifica serviços ativos antes da atualização, realiza o processo e garante que os serviços retornem ao estado operacional.</li>
+                <li><strong>Impacto:</strong> Reduziu o tempo de manutenção de semanas para horas, com reporte de status em tempo real via NRPE ao Nagios XI e eliminação do erro humano.</li>
+            </ul>
+            <div class="tech-tags">
+                <span class="tech-tag">Ansible</span>
+                <span class="tech-tag">Bash</span>
+                <span class="tech-tag">Linux</span>
+                <span class="tech-tag">Nagios XI / NRPE</span>
+            </div>
+        </div>
+
+        <!-- PROJETO 4: Integração Nagios + Jira -->
+        <div class="project-card">
+            <div class="project-card-header">
+                <h2>Integração Nagios XI &#8594; Jira (Abertura Automática de Chamados)</h2>
+                <span class="category">Observabilidade / Automação</span>
+            </div>
+            <span class="date">Monitoramento &amp; ITSM &#8212; LBV</span>
+            <p>
+                Script de automação que conecta o sistema de monitoramento Nagios XI ao Jira, abrindo chamados automaticamente
+                quando um problema é detectado na infraestrutura.
+            </p>
+            <ul>
+                <li><strong>Problema:</strong> Alertas do Nagios exigiam ação manual para criação de chamados, atrasando a resposta a incidentes.</li>
+                <li><strong>Solução:</strong> Script em Bash/Python que intercepta eventos do Nagios e cria tickets no Jira com as informações do problema, urgência e servidor afetado.</li>
+                <li><strong>Impacto:</strong> Aumento significativo na velocidade de resposta e manutenção de incidentes de infraestrutura.</li>
+            </ul>
+            <div class="tech-tags">
+                <span class="tech-tag">Bash</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Nagios XI</span>
+                <span class="tech-tag">Jira API</span>
+            </div>
+        </div>
+
+        <!-- PLACEHOLDER: Mais projetos em breve -->
+        <div class="project-card placeholder">
+            <h2>&#43; Mais projetos em breve...</h2>
+            <p>Novos projetos e automações serão adicionados aqui conforme forem sendo publicados.</p>
+        </div>
+
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>&gt;_ Execution finished successfully. Status: 200 OK</p>
+    </footer>
+</div>
+
+</body>
+</html>
