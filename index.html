@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Leonardo | DevOps & SysAdmin</title>
+    <style>
+        /* Variáveis de Cores - Tema Dark TI */
+        :root {
+            --bg-color: #0d1117;
+            --bg-card: #161b22;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent-green: #3fb950;
+            --accent-blue: #58a6ff;
+            --border-color: #30363d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Tipografia de Código para dar visual de TI */
+        h1, h2, h3, .mono {
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px; /* Layout mais amplo */
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            color: var(--accent-blue);
+            font-size: 2.5rem;
+        }
+
+        /* Detalhe terminal no h1 */
+        header h1::before {
+            content: "david@sysadmin:~$ ";
+            color: var(--accent-green);
+            font-size: 2rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        .contact-links {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        /* Estilo do Botão de Download */
+        .btn-download {
+            background-color: var(--accent-green);
+            color: var(--bg-color) !important;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: opacity 0.3s;
+            border: 1px solid var(--accent-green);
+        }
+        .btn-download:hover {
+            opacity: 0.8;
+            text-decoration: none;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            color: var(--accent-green);
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        /* Prefixo do h2 (parecendo um diretório) */
+        h2::before {
+            content: "./";
+            color: var(--text-muted);
+        }
+
+        /* Grid para espalhar melhor as seções na tela */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        @media (min-width: 900px) {
+            .main-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Estilo das Habilidades (Tags) */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: bold;
+        }
+
+        /* Estilo das Experiências (Cards) */
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .card h3 {
+            color: var(--accent-blue);
+            margin-bottom: 5px;
+        }
+
+        .card .date {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            display: inline-block;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- CABEÇALHO -->
+    <header>
+        <h1>David_Leonardo_Cerqueira</h1>
+        <p class="mono">> Analista e Administrador de Servidores | DevOps | SysAdmin | Developer</p>
+        
+        <div class="contact-links mono">
+            <a href="mailto:davidleocerqueira@gmail.com">📧 Email</a>
+            <a href="https://www.linkedin.com/in/david-leonardo-b25670250/" target="_blank">🔗 LinkedIn</a>
+            <a href="https://github.com/Davidleoc" target="_blank">💻 GitHub</a>
+            <span>📍 São Paulo/SP</span>
+            
+            <!-- Botão de Download de CV. Nomeie seu arquivo PDF como 'curriculo.pdf' na mesma pasta -->
+            <a href="curriculo.pdf" download class="btn-download">📄 Download_CV.pdf</a>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <!-- COLUNA ESQUERDA -->
+        <div class="column">
+            <!-- SOBRE MIM -->
+            <section>
+                <h2>about_me.txt</h2>
+                <p>
+                    Administrador de Servidores Linux (DevOps | SRE) apaixonado por automação e infraestrutura escalável. 
+                    Tenho experiência em manter ambientes críticos rodando em Linux (CentOS/Ubuntu), orquestrando containers com <span class="highlight">Docker e Kubernetes (Argo CD)</span>, 
+                    e automatizando processos com <span class="highlight">Ansible</span>. 
+                </p>
+                <br>
+                <p>
+                    Mais do que apenas configurar ferramentas, gosto de desenvolver soluções internas — como sistemas de gestão de ativos, 
+                    LLM e automações de monitoramento — que trazem agilidade real para o dia a dia da equipe. Minha base técnica em Desenvolvimento de Sistemas 
+                    me permite transitar bem entre infraestrutura e engenharia de software (Bash, Java, Python, C#).
+                </p>
+            </section>
+
+            <!-- HABILIDADES -->
+            <section>
+                <h2>skills.sh</h2>
+                <div class="skills-container">
+                    <span class="skill-tag">Linux (CentOS/Ubuntu)</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">Ansible</span>
+                    <span class="skill-tag">Bash Scripting</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">PostgreSQL / MongoDB</span>
+                    <span class="skill-tag">Java & C#</span>
+                    <span class="skill-tag">Nagios / Prometheus</span>
+                    <span class="skill-tag">Git / Bitbucket / Jira</span>
+                </div>
+            </section>
+
+            <!-- FORMAÇÃO -->
+            <section>
+                <h2>education.json</h2>
+                <div class="card">
+                    <h3>Análise e Desenvolvimento de Sistemas (Graduação)</h3>
+                    <span class="date">Unip - Marquês | Concluído em 2024</span>
+                </div>
+                <div class="card">
+                    <h3>Conquistas & Certificações</h3>
+                    <ul>
+                        <li>Monitoria em Java (Programação Orientada a Objetos) - 2024</li>
+                        <li>Medalha de Prata na Olimpíada Brasileira de Raciocínio Lógico (OBRL) - 2022</li>
+                        <li>Cursos complementares em Linux, Docker, Python e Modelagem de Dados.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- COLUNA DIREITA -->
+        <div class="column">
+            <!-- EXPERIÊNCIA -->
+            <section>
+                <h2>history_experiencias.log</h2>
+                
+                <div class="card">
+                    <h3>Administrador de Servidores e Bancos de Dados (DevOps / Infraestrutura)</h3>
+                    <span class="date">Legião da Boa Vontade (LBV) | 03/2025 – Atual</span>
+                    <ul>
+                        <li>Administração e manutenção de servidores Linux, garantindo estabilidade, segurança e aplicação de Hardening.</li>
+                        <li>Atuação DevOps com Docker/Docker-compose, cluster Kubernetes e gestão de aplicações via ArgoCD.</li>
+                        <li>Implementação de automação massiva com <strong>Ansible e Rundeck</strong>, substituindo rotinas manuais demoradas por processos automatizados com auto-recuperação, reduzindo drasticamente o tempo de manutenção.</li>
+                        <li>Criação de scripts em <strong>Bash e Python</strong> para integração de monitoramento (Nagios XI) com abertura automática de chamados no Jira.</li>
+                        <li>Criação de cluster MongoDB com replica set e monitoramento de PostgreSQL via Prometheus/Grafana.</li>
+                        <li>Renovação de certificados SSL e configuração de proxy reverso (Apache/Nginx).</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Projetos Internos e Automações de Destaque</h3>
+                    <span class="date">Desenvolvimento e Inovação</span>
+                    <ul>
+                        <li><strong>LLM Customizado:</strong> Criação de LLM (opensource) do zero com vetorização de dados usando Python e PostgreSQL.</li>
+                        <li><strong>Gestão de Ativos (IPAM):</strong> Criação de ferramenta interna para gerenciamento de redes e nomes de ativos.</li>
+                        <li><strong>Infra as Code:</strong> Uso de Ansible e Rundeck para checagem de servidores e persistência em Banco de Dados, gerando dashboards no PowerBI.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>>_ Execution finished successfully. Status: 200 OK</p>
+    </footer>
+</div>
+
+</body>
+</html>
