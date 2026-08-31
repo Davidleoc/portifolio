@@ -191,13 +191,13 @@
             <span class="date">DevOps &amp; Infraestrutura Interna &#8212; LBV</span>
             <p>
                 Sistema web interno desenvolvido para centralizar e automatizar a gestão de endereços IP, sub-redes e nomes de ativos
-                da infraestrutura. Surgiu da necessidade real de organizar e auditar a alocação de IPs em um ambiente com múltiplos
-                servidores e serviços.
+                da infraestrutura. Conectado com o AD e CMDB. Surgiu da necessidade real de organizar e auditar a alocação de IPs em um ambiente com múltiplos
+                servidores e serviços. Além disso, agilizar na hora de reservar um nome e um IP para criar servidores.
             </p>
             <ul>
-                <li><strong>Problema:</strong> Controle de IPs feito manualmente em planilhas, sujeito a conflitos e erros humanos.</li>
-                <li><strong>Solução:</strong> Ferramenta web com interface para consulta, cadastro e edição de endereços IP e ativos de rede.</li>
-                <li><strong>Impacto:</strong> Redução de conflitos de IP, melhoria na auditoria e rastreabilidade dos ativos de rede em ambiente de produção.</li>
+                <li><strong>Problema:</strong> Controle de IPs feito manualmente em planilhas, sujeito a conflitos e erros humanos. Ja estava desatualizado a anos. Para descobrir se um IP estava em uso precisavamos pingar ele.</li>
+                <li><strong>Solução:</strong> Ferramenta web com interface para consulta e edição de endereços IP e ativos de rede. Importando toda a estrtura do CMDB.</li>
+                <li><strong>Impacto:</strong> Redução de conflitos de IP, melhoria na auditoria e rastreabilidade dos ativos de rede em ambiente de produção. E agilidade na hora de reservar um IP e nome de ativos.</li>
             </ul>
             <div class="tech-tags">
                 <span class="tech-tag">Python</span>
@@ -217,16 +217,12 @@
             <span class="date">Infraestrutura de IA Interna &#8212; LBV</span>
             <p>
                 Criação de um Large Language Model (LLM) opensource, do zero, com todo o processo de vetorização e indexação de
-                dados empresariais internos, permitindo buscas semânticas na base de conhecimento da equipe.
+                dados empresariais internos, permitindo buscas semânticas na base de conhecimento da equipe. Foi usado ollama, modelos de IA, Open WebUI,
+                systemd (para criar serviço de vetorização automática das informações, com logs), PostgreSQL. 
+                Por se tratar de um projeto interno e confidencial da empresa, alguns detalhes técnicos e informações sobre a implementação não podem ser divulgados.
             </p>
-            <ul>
-                <li><strong>Problema:</strong> Dificuldade em consultar e recuperar informações internas dispersas em documentos e bases de dados.</li>
-                <li><strong>Solução:</strong> Pipeline de vetorização de dados com modelo LLM integrado ao banco de dados para buscas por similaridade semântica.</li>
-                <li><strong>Impacto:</strong> Acelerou a consulta de informações técnicas pela equipe, sem depender de ferramentas pagas externas.</li>
-            </ul>
             <div class="tech-tags">
                 <span class="tech-tag">Python</span>
-                <span class="tech-tag">PostgreSQL (pgvector)</span>
                 <span class="tech-tag">LLM / IA</span>
                 <span class="tech-tag">PostgreSQL (pgvector)</span>
                 <span class="tech-tag">Vetorização</span>
@@ -236,17 +232,18 @@
         <!-- PROJETO 3: Automação Ansible -->
         <div class="project-card">
             <div class="project-card-header">
-                <h2>Automação de Atualização Massiva com Ansible</h2>
+                <h2>Automação de Atualização Massiva e Inventários com Ansible</h2>
                 <span class="category">DevOps / Automação</span>
             </div>
             <span class="date">Infraestrutura Linux &#8212; LBV</span>
             <p>
                 Implementação de um playbook Ansible para atualização segura e massiva de pacotes em servidores Linux (CentOS/Ubuntu),
-                com lógica de autorrecuperação de serviços.
+                com lógica de autorrecuperação de serviços. Implementação de um playbooks para atualização do client do Symantec. E controles de inventários, de CPUs, Symantec, Kernels, entre outros...
             </p>
             <ul>
-                <li><strong>Problema:</strong> Atualização de servidores era um processo manual, demorado, feito de forma fracionada fora do horário de expediente.</li>
-                <li><strong>Solução:</strong> Playbook Ansible que identifica serviços ativos antes da atualização, realiza o processo e garante que os serviços retornem ao estado operacional.</li>
+                <li><strong>Problema:</strong> Atualização de servidores era um processo manual, demorado, repetitivo e feito de forma fracionada fora do horário de expediente.</li>
+                <li><strong>Solução:</strong> Playbook Ansible que identifica serviços ativos antes da atualização, realiza o processo e garante que os serviços retornem ao estado operacional. 
+                    Alinhado com um monitoramento Nagios que alarma caso um serviço critico do servidor não volte a ser ativo.</li>
                 <li><strong>Impacto:</strong> Reduziu o tempo de manutenção de semanas para horas, com reporte de status em tempo real via NRPE ao Nagios XI e eliminação do erro humano.</li>
             </ul>
             <div class="tech-tags">
@@ -269,7 +266,7 @@
                 quando um problema é detectado na infraestrutura.
             </p>
             <ul>
-                <li><strong>Problema:</strong> Alertas do Nagios exigiam ação manual para criação de chamados, atrasando a resposta a incidentes.</li>
+                <li><strong>Problema:</strong> Alertas do Nagios exigiam ação manual para criação de chamados, atrasando a identificação e resposta a incidentes.</li>
                 <li><strong>Solução:</strong> Script em Bash/Python que intercepta eventos do Nagios e cria tickets no Jira com as informações do problema, urgência e servidor afetado.</li>
                 <li><strong>Impacto:</strong> Aumento significativo na velocidade de resposta e manutenção de incidentes de infraestrutura.</li>
             </ul>
