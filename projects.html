@@ -244,7 +244,8 @@
             </p>
             <ul>
                 <li><strong>Problema:</strong> Atualização de servidores era um processo manual, demorado, repetitivo e feito de forma fracionada fora do horário de expediente.</li>
-                <li><strong>Solução:</strong> Playbook Ansible que identifica serviços ativos antes da atualização, realiza o processo e garante que os serviços retornem ao estado operacional. 
+                <li><strong>Solução:</strong> Playbook Ansible que identifica serviços ativos antes da atualização, realiza o processo e garante que os serviços retornem ao estado operacional, por meio de um sistema que verifica os principais serviços
+                    do servidor, que são apontados no script, e garante a integridade deles, caso eles falhem, o script, tenta subir. 
                     Alinhado com um monitoramento Nagios que alarma caso um serviço critico do servidor não volte a ser ativo.</li>
                 <li><strong>Impacto:</strong> Reduziu o tempo de manutenção de semanas para horas, com reporte de status em tempo real via NRPE ao Nagios XI e eliminação do erro humano.</li>
             </ul>
