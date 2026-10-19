@@ -191,19 +191,20 @@
             <span class="date">DevOps &amp; Infraestrutura Interna &#8212; LBV</span>
             <p>
             Sistema web interno desenvolvido para centralizar e automatizar a gestão de endereços IP, sub-redes e nomes de ativos da infraestrutura. 
-            Integrado ao Active Directory (AD) e ao CMDB,o sistema surgiu da necessidade de organizar, controlar e auditar a alocação de IPs em um ambiente com múltiplos servidores e serviços. 
+            Integrado ao Active Directory (AD) e ao CMDB, o sistema surgiu da necessidade de organizar, controlar e auditar a alocação de IPs em um ambiente com múltiplos servidores e serviços. 
             Além disso, a solução agiliza o processo de reserva de nomes e endereços IP para a criação de novos servidores, garantindo maior organização e padronização. 
             O sistema também realiza backups semanais de toda a infraestrutura de rede e dos nomes dos ativos, contribuindo para a segurança, rastreabilidade e disponibilidade das informações.
             </p>
             <ul>
-                <li><strong>Problema:</strong> Controle de IPs feito manualmente em planilhas, sujeito a conflitos e erros humanos. Ja estava desatualizado a anos. Para descobrir se um IP estava em uso precisavamos pingar ele. 
+                <li><strong>Problema:</strong> Controle de IPs feito manualmente em planilhas, sujeito a conflitos e erros humanos. Ja estava desatualizado havia anos. Para descobrir se um IP estava em uso precisávamos pingar ele. 
                 E falta de backup da infraestrutura.</li>
-                <li><strong>Solução:</strong> Ferramenta web com interface para consulta e edição de endereços IP e ativos de rede. Importando toda a estrtura do CMDB.</li>
+                <li><strong>Solução:</strong> Ferramenta web com interface para consulta e edição de endereços IP e ativos de rede. Importando toda a estrutura do CMDB.</li>
                 <li><strong>Impacto:</strong> Redução de conflitos de IP, melhoria na auditoria e rastreabilidade dos ativos de rede em ambiente de produção. E agilidade na hora de reservar um IP e nome de ativos.</li>
             </ul>
             <div class="tech-tags">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Banco de Dados</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Bash</span>
+                <span class="tech-tag">Banco de Dados/SQL</span>
                 <span class="tech-tag">Redes</span>
                 <span class="tech-tag">Infraestrutura</span>
             </div>
@@ -218,7 +219,7 @@
             </div>
             <span class="date">Infraestrutura de IA Interna &#8212; LBV</span>
             <p>
-                Criação de um Large Language Model (LLM) opensource, do zero, com todo o processo de vetorização e indexação de
+                Criação de um Large Language Model (LLM) open source, do zero, com todo o processo de vetorização e indexação de
                 dados empresariais internos, permitindo buscas semânticas na base de conhecimento da equipe. Foi usado ollama, modelos de IA, como QWEN, Open WebUI,
                 systemd (para criar serviço de vetorização automática das informações, com logs), PostgreSQL, com PGvector. 
                 O sistema foi projetado para que só tivessemos o custo da infraestrutura.
@@ -248,7 +249,7 @@
                 <li><strong>Solução:</strong> Playbook Ansible que identifica serviços ativos antes da atualização, realiza o processo e garante que os serviços retornem ao estado operacional, por meio de um sistema que verifica os principais serviços
                     do servidor, que são apontados no script, e garante a integridade deles, caso eles falhem, o script, tenta subir. 
                     Alinhado com um monitoramento Nagios que alarma caso um serviço critico do servidor não volte a ser ativo.</li>
-                <li><strong>Impacto:</strong> Reduziu o tempo de manutenção de semanas para horas, com reporte de status em tempo real via NRPE ao Nagios XI e eliminação do erro humano.</li>
+                <li><strong>Impacto:</strong> Reduziu o tempo de manutenção de semanas para minutos, com reporte de status em tempo real via NRPE ao Nagios XI e eliminação do erro humano.</li>
             </ul>
             <div class="tech-tags">
                 <span class="tech-tag">Ansible</span>
@@ -256,7 +257,7 @@
                 <span class="tech-tag">Linux</span>
                 <span class="tech-tag">Nagios XI / NRPE</span>
             </div>
-            <a href="https://github.com/Davidleoc/script_atualizacao_linux_automatizada.git" target="_blank" class="btn btn-repo">&#128193; Ver um dos script Ansible no Repositório no GitHub</a>
+            <a href="https://github.com/Davidleoc/script_atualizacao_linux_automatizada.git" target="_blank" class="btn btn-repo">&#128193; Ver um dos scripts Ansible no Repositório no GitHub</a>
         </div>
 
         <!-- PROJETO 4: Integração Nagios + Jira -->
